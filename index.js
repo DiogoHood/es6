@@ -15,7 +15,7 @@ class Message {
     if (typeof created === 'undefined' || isNaN(created)) {
       throw new Error('Invalid created');
     }
-    if (this.hasOwnProperty('_created')) {
+    if (Message.prototype.hasOwnProperty.call(this, '_created')) {
       throw new Error('Created already defined');
     }
     this._created = created;
@@ -34,7 +34,7 @@ class Message {
  */
 class ImageMessage extends Message {
   constructor(text = '', created = Date.now(),
-              url = '', thumbnail = '') {
+    url = '', thumbnail = '') {
     super(text, created);
     this.url = url;
     this.thumbnail = thumbnail;
@@ -46,8 +46,8 @@ class ImageMessage extends Message {
    */
   toString() {
     return `Photo${super.toString()} ` +
-           `- Url: ${this.url} ` +
-           `- Thumbnail: ${this.thumbnail}`;
+      `- Url: ${this.url} ` +
+      `- Thumbnail: ${this.thumbnail}`;
   }
 }
 
