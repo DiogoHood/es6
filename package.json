@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/Especializa/es6#readme",
   "devDependencies": {
+    "@angular/cli": "^1.7.4",
+    "angular-cli": "^1.0.0-beta.28.3",
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
